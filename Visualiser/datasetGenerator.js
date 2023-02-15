@@ -3,8 +3,8 @@ const path = require('path');
 
 const constants = {};
 
-constants.RAW_DIR = './raw';
-constants.DATASET_DIR = './dataset';
+constants.RAW_DIR = './Visualiser/raw';
+constants.DATASET_DIR = './Visualiser/dataset';
 constants.JSON_DIR = constants.DATASET_DIR + '/json';
 constants.IMG_DIR = constants.DATASET_DIR + '/img';
 constants.SAMPLES = constants.DATASET_DIR + '/samples.json';
