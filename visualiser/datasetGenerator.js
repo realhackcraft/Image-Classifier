@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { createCanvas } = require('canvas');
-const { Draw } = require('../data-gatherer/js/draw.js');
+const { Draw } = require('../common/draw.js');
 
 const canvas = createCanvas(400, 400);
 const ctx = canvas.getContext('2d');
