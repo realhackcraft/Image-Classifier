@@ -1,5 +1,5 @@
 /package-lock.json
 /node_modules
-/Visualiser/dataset/img/*.png
-/Visualiser/dataset/json/*.json
-/Visualiser/raw/*.json
+/visualiser/dataset/img/*.png
+/visualiser/dataset/json/*.json
+/visualiser/raw/*.json
