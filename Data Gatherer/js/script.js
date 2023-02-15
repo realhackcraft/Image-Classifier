@@ -12,6 +12,7 @@ const data = {
 function start() {
   const name = document.getElementById('name');
   const advance = document.getElementById('advance');
+  document.getElementById('name-label').classList.add('invisible');
 
   if (name.value === '') {
     alert('Please enter your name');
