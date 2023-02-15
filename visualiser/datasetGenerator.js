@@ -1,15 +1,15 @@
 const fs = require('fs');
 const path = require('path');
 const { createCanvas } = require('canvas');
-const { Draw } = require('../Data Gatherer/js/draw.js');
+const { Draw } = require('../data-gatherer/js/draw.js');
 
 const canvas = createCanvas(400, 400);
 const ctx = canvas.getContext('2d');
 
 const constants = {};
 
-constants.RAW_DIR = './Visualiser/raw';
-constants.DATASET_DIR = './Visualiser/dataset';
+constants.RAW_DIR = './visualiser/raw';
+constants.DATASET_DIR = './visualiser/dataset';
 createDirIfNonexistent(constants.DATASET_DIR);
 constants.JSON_DIR = constants.DATASET_DIR + '/json';
 createDirIfNonexistent(constants.JSON_DIR);

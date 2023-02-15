@@ -6,7 +6,7 @@
     "canvas": "^2.11.0"
   },
   "scripts": {
-    "visualiser": "node ./Visualiser/datasetGenerator.js"
+    "visualiser": "node visualiser/datasetGenerator.js"
   },
   "author": "Hackcraft_",
   "license": "Copyleft"

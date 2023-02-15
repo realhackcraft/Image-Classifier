@@ -19,4 +19,6 @@ class Draw {
   }
 }
 
-module.exports = { Draw };
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { Draw };
+}
