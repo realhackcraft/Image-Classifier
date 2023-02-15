@@ -1,7 +1,7 @@
 const sketchpad = new Sketchpad(document.getElementById('sketchpadContainer'));
 
 let index = 0;
-const labels = ['bicycle', 'fish', 'house', 'money', 'tree', 'key', 'watch', 'penis'];
+const labels = ['bicycle', 'fish', 'house', 'money', 'tree', 'key', 'watch'];
 
 const data = {
   name: null,
