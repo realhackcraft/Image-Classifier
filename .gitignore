@@ -1,2 +1,4 @@
 /package-lock.json
 /node_modules
+/Visualiser/dataset/img/*.*
+/Visualiser/dataset/json/*.*
