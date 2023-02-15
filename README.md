@@ -2,4 +2,4 @@
 A cool image classifier
 
 
-GO [here](http://realhackcraft.github.io/image-classifier) to submit data to train it!
+GO [here](https://realhackcraft.github.io/Image-Classifier/) to submit data to train it!
