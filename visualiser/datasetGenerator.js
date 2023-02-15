@@ -2,20 +2,14 @@ const fs = require('fs');
 const path = require('path');
 const { createCanvas } = require('canvas');
 const { Draw } = require('../common/draw.js');
+const { constants, innitDirs } = require('../common/constants.js');
+const { Utils } = require('../common/utils.js');
+const { labels } = require('../data-gatherer/js/script.js');
+
+innitDirs();
 
 const canvas = createCanvas(400, 400);
 const ctx = canvas.getContext('2d');
-
-const constants = {};
-
-constants.RAW_DIR = './visualiser/raw';
-constants.DATASET_DIR = './visualiser/dataset';
-createDirIfNonexistent(constants.DATASET_DIR);
-constants.JSON_DIR = constants.DATASET_DIR + '/json';
-createDirIfNonexistent(constants.JSON_DIR);
-constants.IMG_DIR = constants.DATASET_DIR + '/img';
-createDirIfNonexistent(constants.IMG_DIR);
-constants.SAMPLES = constants.DATASET_DIR + '/samples.json';
 
 const fileNames = fs.readdirSync(constants.RAW_DIR);
 
@@ -44,11 +38,15 @@ fileNames.forEach(fileName => {
 
     generateImageFile(path.join(constants.IMG_DIR, `${id}.png`), paths);
 
+    Utils.printProgress(id, fileNames.length * labels.length);
+
     id++;
   }
 });
 
 fs.writeFileSync(constants.SAMPLES, JSON.stringify(samples));
+fs.writeFileSync(constants.SAMPLES_JS, `const samples = ${JSON.stringify(samples)};`);
+
 
 function generateImageFile(fileName, paths) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -56,11 +54,4 @@ function generateImageFile(fileName, paths) {
 
   const buffer = canvas.toBuffer('image/png');
   fs.writeFileSync(fileName, buffer);
-}
-
-
-function createDirIfNonexistent(dir) {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
-  }
 }

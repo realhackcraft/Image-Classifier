@@ -1,9 +1,16 @@
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  -ms-overflow-style: none;
+  overscroll-behavior: none;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: skyblue;
-  overscroll-behavior: none;
-  overflow: hidden;
-  user-select: none;
 }
 
 #content {

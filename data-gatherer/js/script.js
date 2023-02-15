@@ -1,7 +1,13 @@
-const sketchpad = new Sketchpad(document.getElementById('sketchpadContainer'));
+const labels = ['bicycle', 'fish', 'house', 'money', 'tree', 'key'];
+
+let sketchpad;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { labels };
+} else {
+  sketchpad = new Sketchpad(document.getElementById('sketchpadContainer'));
+}
 
 let index = 0;
-const labels = ['bicycle', 'fish', 'house', 'money', 'tree', 'key', 'watch'];
 
 const data = {
   name: null,
