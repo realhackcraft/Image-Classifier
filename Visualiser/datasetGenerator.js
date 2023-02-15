@@ -10,8 +10,11 @@ const constants = {};
 
 constants.RAW_DIR = './Visualiser/raw';
 constants.DATASET_DIR = './Visualiser/dataset';
+createDirIfNonexistent(constants.DATASET_DIR);
 constants.JSON_DIR = constants.DATASET_DIR + '/json';
+createDirIfNonexistent(constants.JSON_DIR);
 constants.IMG_DIR = constants.DATASET_DIR + '/img';
+createDirIfNonexistent(constants.IMG_DIR);
 constants.SAMPLES = constants.DATASET_DIR + '/samples.json';
 
 const fileNames = fs.readdirSync(constants.RAW_DIR);
@@ -53,4 +56,11 @@ function generateImageFile(fileName, paths) {
 
   const buffer = canvas.toBuffer('image/png');
   fs.writeFileSync(fileName, buffer);
+}
+
+
+function createDirIfNonexistent(dir) {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
 }
