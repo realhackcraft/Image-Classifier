@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=0.9, user-scalable=0" name="viewport">
+    <title>Sketcher</title>
+    <link href="normalized.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script defer src="js/sketchpad.js"></script>
+    <script defer src="js/draw.js"></script>
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+<div id="content">
+    <h1>Sketcher</h1>
+    <br>
+    <div>
+        <label for="name">Name:</label>
+        <input id="name" placeholder="Enter your name" type="text">
+        <span id="instructions"></span>
+        <button id="advance" onclick="start()">Start</button>
+    </div>
+    <br>
+    <div class="invisible" id="sketchpadContainer">
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "ai-image-classifier",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "visualiser": "/usr/local/bin/node /Users/Hackcraft_/WebstormProjects/ImageClassifier/Visualiser/datasetGenerator.js",
+    "test": "echo no"
+  },
+  "author": "Hackcraft_",
+  "license": "Copyleft"
+}

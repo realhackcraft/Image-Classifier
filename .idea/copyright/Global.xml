@@ -1,0 +1,7 @@
+<component name="CopyrightManager">
+  <copyright>
+    <option name="keyword" value="Copyleft" />
+    <option name="notice" value="Copyleft (ↄ) &amp;#36;originalComment.match(&quot;Copyleft \(c\) (\d+)&quot;, 1, &quot;-&quot;, &quot;&amp;#36;today.year&quot;)&amp;#36;today.year. All Wrongs Reserved. This code is allowed to be redistributed with or without modifications,  but it must be under the same copyleft licence." />
+    <option name="myName" value="Global" />
+  </copyright>
+</component>
