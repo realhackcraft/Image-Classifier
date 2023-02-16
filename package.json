@@ -9,5 +9,8 @@
     "visualiser": "node visualiser/datasetGenerator.js"
   },
   "author": "Hackcraft_",
-  "license": "Copyleft"
+  "license": "Copyleft",
+  "devDependencies": {
+    "stylelint-config-recommended": "^10.0.1"
+  }
 }

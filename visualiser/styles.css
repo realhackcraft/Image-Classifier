@@ -18,6 +18,7 @@ button:disabled, button:disabled:hover {
   cursor: not-allowed;
 }
 
+/*noinspection CssUnusedSymbol*/
 .row {
   display: flex;
   flex-direction: row;
@@ -25,10 +26,12 @@ button:disabled, button:disabled:hover {
   align-items: center;
 }
 
+/*noinspection CssUnusedSymbol*/
 .sample {
   width: 100%;
 }
 
+/*noinspection CssUnusedSymbol*/
 .sampleContainer {
   flex: 1 1 0;
   background-color: #fff;
@@ -39,6 +42,7 @@ button:disabled, button:disabled:hover {
   overflow: hidden;
 }
 
+/*noinspection CssUnusedSymbol*/
 .row-label {
   flex: 2 1 0;
   text-overflow: ellipsis;
@@ -46,6 +50,7 @@ button:disabled, button:disabled:hover {
   white-space: nowrap;
 }
 
+/*noinspection CssUnusedSymbol*/
 .blur {
   filter: blur(5px);
 }

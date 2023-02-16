@@ -12,15 +12,19 @@ const canvas = createCanvas(400, 400);
 const ctx = canvas.getContext('2d');
 
 const fileNames = fs.readdirSync(constants.RAW_DIR);
-
 const samples = [];
 
 let id = 1;
+let badFiles = 0;
 
 fileNames.forEach(fileName => {
+  if (!fileName.endsWith('.json')) {
+    badFiles++;
+    return;
+  }
   const content = fs.readFileSync(path.join(constants.RAW_DIR, fileName));
 
-  const { session, name, drawings } = JSON.parse(content);
+  const { session, name, drawings } = JSON.parse(content.toString());
 
   for (let label in drawings) {
     samples.push({
@@ -38,8 +42,8 @@ fileNames.forEach(fileName => {
 
     generateImageFile(path.join(constants.IMG_DIR, `${id}.png`), paths);
 
-    Utils.printProgress(id, fileNames.length * labels.length);
-
+    Utils.printProgress(id, (fileNames.length - badFiles) * labels.length);
+    // console.log(id + ', ' + (fileNames.length - badFiles) * labels.length);
     id++;
   }
 });

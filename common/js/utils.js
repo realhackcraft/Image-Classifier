@@ -12,7 +12,7 @@ class Utils {
     const bar = '█'.repeat(filledLength) + '░'.repeat(barLength - filledLength);
     const text = `Progress: [${bar}] ${percentage.toFixed(percentageFraction)}%`;
 
-    process.stdout.clearLine();
+    process.stdout.clearLine(0);
     process.stdout.cursorTo(0);
 
     process.stdout.write(text);

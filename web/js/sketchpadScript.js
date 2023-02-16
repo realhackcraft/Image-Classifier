@@ -1,10 +1,12 @@
-const labels = ['bicycle', 'fish', 'house', 'money', 'tree', 'key'];
+const labels = ['bicycle', 'fish', 'house', 'money', 'tree'];
+let advance;
 
 let sketchpad;
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { labels };
 } else {
   sketchpad = new Sketchpad(document.getElementById('sketchpadContainer'));
+  advance = document.getElementById('advance');
 }
 
 let index = 0;
@@ -15,7 +17,6 @@ const data = {
   drawings: {},
 };
 
-const advance = document.getElementById('advance');
 
 function start() {
   const name = document.getElementById('name');
