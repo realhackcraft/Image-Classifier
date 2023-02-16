@@ -15,9 +15,10 @@ const data = {
   drawings: {},
 };
 
+const advance = document.getElementById('advance');
+
 function start() {
   const name = document.getElementById('name');
-  const advance = document.getElementById('advance');
   document.getElementById('name-label').classList.add('invisible');
 
   if (name.value === '') {
@@ -62,15 +63,17 @@ function updateInstructions() {
 
 function finish() {
   document.getElementById('instructions').innerText = 'Thank you for your participation!';
-  document.getElementById('advance').innerText = 'Save';
-  document.getElementById('advance').onclick = save;
+  advance.innerText = 'Save';
+  advance.onclick = save;
 
   document.getElementById('sketchpadContainer').classList.add('invisible');
 }
 
 function save() {
-  document.getElementById('advance').classList.add('invisible');
   document.getElementById('instructions').innerText = 'Send the downloaded file to the hackcraft_@hotmail.com';
+
+  advance.onclick = () => window.location.href = '../../visualiser';
+  advance.innerText = 'See Others\' Drawings';
 
   const download = document.createElement('a');
   download.href = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(data))}`;
@@ -79,4 +82,6 @@ function save() {
 
   download.click();
   document.removeChild(download);
+
+
 }
