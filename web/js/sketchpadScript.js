@@ -1,4 +1,4 @@
-const labels = ['bicycle', 'fish', 'house', 'coin', 'tree'];
+const labels = ['bicycle', 'fish', 'house', 'tree', 'flower', 'cloud', 'sun', 'bottle', 'banana', 'pizza', 'donut'];
 let advance;
 
 let sketchpad;
