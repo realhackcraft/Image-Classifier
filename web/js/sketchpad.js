@@ -2,18 +2,14 @@ class Sketchpad {
   constructor(container, size = 400) {
     this.isDrawing = false;
     this.paths = [];
+    this.size = size;
 
     this.canvas = document.createElement('canvas');
 
-    // increase resolution on retina displays
-    const dpr = window.devicePixelRatio || 1;
-    this.canvas.width = size * dpr * 2;
-    this.canvas.height = size * dpr * 2;
-    this.canvas.style.width = size * 2 + 'px';
-    this.canvas.style.height = size * 2 + 'px';
+    this.canvas.width = this.size;
+    this.canvas.height = this.size;
 
     this.ctx = this.canvas.getContext('2d');
-    this.ctx.scale(dpr, dpr);
 
     this.canvas.style.backgroundColor = 'white';
     this.canvas.style.border = '1px solid black';

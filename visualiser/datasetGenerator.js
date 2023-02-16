@@ -4,11 +4,11 @@ const { createCanvas } = require('canvas');
 const { Draw } = require('../common/js/draw.js');
 const { constants, innitDirs } = require('../common/js/constants.js');
 const { Utils } = require('../common/js/utils.js');
-const { labels } = require('../web/js/sketchpadScript.js');
+const { labels, CanvasSize } = require('../web/js/sketchpadScript.js');
 
 innitDirs();
 
-const canvas = createCanvas(800, 800);
+const canvas = createCanvas(CanvasSize, CanvasSize);
 const ctx = canvas.getContext('2d');
 
 const fileNames = fs.readdirSync(constants.RAW_DIR);

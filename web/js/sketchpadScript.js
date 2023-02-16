@@ -1,11 +1,12 @@
-const labels = ['bicycle', 'fish', 'house', 'tree', 'flower', 'cloud', 'sun', 'bottle', 'banana', 'pizza', 'donut'];
+const labels = ['bicycle', 'fish', 'house', 'tree', 'flower', 'sun', 'slice of pizza', 'donut'];
 let advance;
+let CanvasSize = 500;
 
 let sketchpad;
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { labels };
+  module.exports = { labels, CanvasSize };
 } else {
-  sketchpad = new Sketchpad(document.getElementById('sketchpadContainer'));
+  sketchpad = new Sketchpad(document.getElementById('sketchpadContainer'), CanvasSize);
   advance = document.getElementById('advance');
 }
 
