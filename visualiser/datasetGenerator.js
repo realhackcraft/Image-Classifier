@@ -8,7 +8,7 @@ const { labels } = require('../web/js/sketchpadScript.js');
 
 innitDirs();
 
-const canvas = createCanvas(400, 400);
+const canvas = createCanvas(800, 800);
 const ctx = canvas.getContext('2d');
 
 const fileNames = fs.readdirSync(constants.RAW_DIR);
