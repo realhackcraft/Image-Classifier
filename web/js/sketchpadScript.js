@@ -24,11 +24,14 @@ function start() {
   document.getElementById('name-label').classList.add('invisible');
 
   if (name.value === '') {
-    alert('Please enter your name');
-    return;
+    alert('Name set to Anonymous');
+    name.value = 'Anonymous';
   }
 
-  data.name = name.value;
+  // make data.name have first letter of each word uppercase, and all other letters lowercase. Exceptions are if the word starts with mc, then make m lowercase and the first letter after mc uppercase
+
+  data.name = Utils.toNameCase(name.value);
+
   name.classList.add('invisible');
   advance.innerText = 'Next';
   advance.onclick = next;

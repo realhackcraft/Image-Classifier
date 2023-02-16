@@ -36,6 +36,15 @@ class Utils {
     });
     return groups;
   }
+
+  static toNameCase(string) {
+    return string.split(' ').map(word => {
+      if (word.toLowerCase().startsWith('mc')) {
+        return word[0].toLowerCase() + word[1].toLowerCase() + word[2].toUpperCase() + word.slice(3).toLowerCase();
+      }
+      return word[0].toUpperCase() + word.slice(1).toLowerCase();
+    }).join(' ');
+  }
 }
 
 if (typeof module !== 'undefined' && module.exports) {
