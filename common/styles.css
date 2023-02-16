@@ -11,6 +11,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: skyblue;
+  height: 100vh;
 }
 
 #content {
