@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const { createCanvas } = require('canvas');
-const { Draw } = require('../common/draw.js');
-const { constants, innitDirs } = require('../common/constants.js');
-const { Utils } = require('../common/utils.js');
-const { labels } = require('../data-gatherer/js/script.js');
+const { Draw } = require('../common/js/draw.js');
+const { constants, innitDirs } = require('../common/js/constants.js');
+const { Utils } = require('../common/js/utils.js');
+const { labels } = require('../web/js/sketchpadScript.js');
 
 innitDirs();
 

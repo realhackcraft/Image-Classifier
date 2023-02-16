@@ -1,6 +1,6 @@
-const fs = require('fs');
-
 class Utils {
+  static flaggedUsers = [];
+
   static printProgress(counts, max) {
     const percentage = Math.round((counts / max) * 100);
 
@@ -19,10 +19,25 @@ class Utils {
   }
 
   static createDirIfNonexistent(dir) {
+    const fs = require('fs');
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }
   }
+
+  static groupBy(array, key) {
+    const groups = {};
+    array.forEach((item) => {
+      const value = item[key];
+      if (!groups[value]) {
+        groups[value] = [];
+      }
+      groups[value].push(item);
+    });
+    return groups;
+  }
 }
 
-module.exports = { Utils };
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { Utils };
+}

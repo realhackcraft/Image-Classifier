@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: skyblue;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sample {
+  width: 100%;
+}
+
+.sampleContainer {
+  flex: 1 1 0;
+  background-color: #fff;
+  text-align: center;
+  margin: 0.1%;
+  border-radius: 5%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.row-label {
+  flex: 2 1 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.blur {
+  filter: blur(5px);
+}
