@@ -1,6 +1,6 @@
 const labels = ['bicycle', 'fish', 'house', 'tree', 'flower', 'sun', 'slice of pizza', 'donut'];
 let advance;
-let CanvasSize = 500;
+let CanvasSize = 450;
 
 let sketchpad;
 if (typeof module !== 'undefined' && module.exports) {
