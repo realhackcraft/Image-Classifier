@@ -1,4 +1,4 @@
-const labels = ['bicycle', 'fish', 'house', 'money', 'tree'];
+const labels = ['bicycle', 'fish', 'house', 'tree', 'flower', 'cloud', 'sun', 'bottle', 'banana', 'pizza', 'donut'];
 let advance;
 
 let sketchpad;
@@ -63,6 +63,7 @@ function updateInstructions() {
 }
 
 function finish() {
+  data.drawings[labels[labels.length - 1]] = sketchpad.paths;
   document.getElementById('instructions').innerText = 'Thank you for your participation!';
   advance.innerText = 'Save';
   advance.onclick = save;

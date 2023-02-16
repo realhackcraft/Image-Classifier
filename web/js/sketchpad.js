@@ -7,10 +7,10 @@ class Sketchpad {
 
     // increase resolution on retina displays
     const dpr = window.devicePixelRatio || 1;
-    this.canvas.width = size * dpr;
-    this.canvas.height = size * dpr;
-    this.canvas.style.width = size + 'px';
-    this.canvas.style.height = size + 'px';
+    this.canvas.width = size * dpr * 2;
+    this.canvas.height = size * dpr * 2;
+    this.canvas.style.width = size * 2 + 'px';
+    this.canvas.style.height = size * 2 + 'px';
 
     this.ctx = this.canvas.getContext('2d');
     this.ctx.scale(dpr, dpr);
