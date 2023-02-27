@@ -12,16 +12,16 @@ constants.SAMPLES_JS = constants.JS_OBJECTS + '/samples.js';
 constants.FEATURES_JS = constants.JS_OBJECTS + '/features.js';
 
 if (typeof module !== 'undefined' && module.exports) {
-  const { Utils } = require('./utils');
+    const {Utils} = require('./utils');
 
-  function innitDirs() {
-    const path = require('path');
-    Utils.createDirIfNonexistent(path.resolve(constants.JSON_DIR));
-    Utils.createDirIfNonexistent(path.resolve(constants.IMG_DIR));
-  }
+    function innitDirs() {
+        const path = require('path');
+        Utils.createDirIfNonexistent(path.resolve(constants.JSON_DIR));
+        Utils.createDirIfNonexistent(path.resolve(constants.IMG_DIR));
+    }
 
-  module.exports = { constants, innitDirs };
+    module.exports = {constants, innitDirs};
 } else {
-  constants.DATASET_DIR = '/node/visualiser/dataset';
-  constants.IMG_DIR = constants.DATASET_DIR + '/img';
+    constants.DATASET_DIR = '../../../node/visualiser/dataset';
+    constants.IMG_DIR = constants.DATASET_DIR + '/img';
 }
