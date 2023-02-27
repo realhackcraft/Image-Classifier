@@ -22,6 +22,6 @@ if (typeof module !== 'undefined' && module.exports) {
 
     module.exports = {constants, innitDirs};
 } else {
-    constants.DATASET_DIR = '../../../node/visualiser/dataset';
+    constants.DATASET_DIR = '../../node/visualiser/dataset';
     constants.IMG_DIR = constants.DATASET_DIR + '/img';
 }
