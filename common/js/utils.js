@@ -1,5 +1,15 @@
 class Utils {
-  static flaggedUsers = [];
+  static flaggedUsers = [1676582847179];
+  static styles = {
+    'bicycle': { color: 'cyan', text: '🚲' },
+    'fish': { color: 'orange', text: '🐟' },
+    'house': { color: 'red', text: '🏠' },
+    'tree': { color: 'green', text: '🌲' },
+    'flower': { color: 'blue', text: '🌻' },
+    'sun': { color: 'yellow', text: '☀️' },
+    'slice of pizza': { color: 'purple', text: '🍕' },
+    'donut': { color: 'magenta', text: '🍩' },
+  };
 
   static printProgress(counts, max) {
     const percentage = Math.round((counts / max) * 100);
@@ -10,7 +20,7 @@ class Utils {
     const filledLength = Math.round(barLength * (percentage / 100));
 
     const bar = '█'.repeat(filledLength) + '░'.repeat(barLength - filledLength);
-    const text = `Progress: [${bar}] ${percentage.toFixed(percentageFraction)}%`;
+    const text = `Progress: [${bar}] ${percentage.toFixed(percentageFraction)}% (${counts} / ${max})`;
 
     process.stdout.clearLine(0);
     process.stdout.cursorTo(0);
@@ -44,6 +54,29 @@ class Utils {
       }
       return word[0].toUpperCase() + word.slice(1).toLowerCase();
     }).join(' ');
+  }
+
+  static distance(p1, p2) {
+    return Math.sqrt(
+        (p1[0] - p2[0]) ** 2 +
+        (p1[1] - p2[1]) ** 2,
+    );
+  }
+
+  static getNearest(loc, points) {
+    let minDist = Number.MAX_SAFE_INTEGER;
+    let nearestIndex = 0;
+
+    for (let i = 0; i < points.length; i++) {
+      const point = points[i];
+      const d = this.distance(loc, point);
+
+      if (d < minDist) {
+        minDist = d;
+        nearestIndex = i;
+      }
+    }
+    return nearestIndex;
   }
 }
 

@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Project" pattern="!file[Image Classifier]:common/js-objects/*&amp;&amp;!file[Image Classifier]:common/js-objects//*&amp;&amp;!file[Image Classifier]:visualiser/dataset//*&amp;&amp;!file[Image Classifier]:visualiser/raw//*" />
+</component>

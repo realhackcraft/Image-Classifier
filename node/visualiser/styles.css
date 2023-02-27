@@ -1,0 +1,104 @@
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: skyblue;
+}
+
+button {
+    border-radius: 0.5em;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #eee;
+}
+
+button:disabled, button:disabled:hover {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/*noinspection CssUnusedSymbol*/
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*noinspection CssUnusedSymbol*/
+.sample {
+    width: 100%;
+
+}
+
+/*noinspection CssUnusedSymbol*/
+.sampleContainer {
+    flex: 1 1 0;
+    background-color: #fff;
+    text-align: center;
+    margin: 0.2% 0.1%;
+    border-radius: 5%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/*noinspection CssUnusedSymbol*/
+.row-label {
+    flex: 2 1 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/*noinspection CssUnusedSymbol*/
+.blur {
+    filter: blur(5px);
+}
+
+.emphasize {
+    background-color: yellow;
+}
+
+#container {
+    cursor: crosshair;
+    width: calc(100% - 450px);
+}
+
+#chartContainer {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#inputContainer {
+    position: fixed;
+    right: 500px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    margin: 10px;
+}
+
+#controlPanel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 450px;
+    text-align: center;
+    padding: 10px;
+}
+
+#predictedLabelContainer {
+    color: white;
+    font-size: 2em;
+    position: relative;
+}
