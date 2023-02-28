@@ -86,6 +86,7 @@ button:disabled, button:disabled:hover {
     transform: translateY(-50%);
     text-align: center;
     margin: 10px;
+    z-index: 1;
 }
 
 #controlPanel {
