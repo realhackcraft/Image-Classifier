@@ -33,7 +33,7 @@ sketchpad.canvas.style.cssText += 'outline: 100000px solid rgba(0, 0, 0, 0.5)';
 function onDrawingUpdate(paths) {
   const functions = Features.inUse.map(feature => feature.function);
   const point = functions.map(func => func(paths));
-  
+
   const { label, nearestSample } = classify(point);
   document.getElementById('predictedLabelContainer').innerHTML = `Is it a ${label}?`;
   chart.showDynamicPoint(point, label, nearestSample);
