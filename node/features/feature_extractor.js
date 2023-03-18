@@ -4,10 +4,10 @@ const { Utils } = require('../../common/js/utils.js');
 
 const fs = require('fs');
 
-const samples = JSON.parse(fs.readFileSync(constants.SAMPLES));
+const samples = JSON.parse(fs.readFileSync(constants.SAMPLES).toString());
 
 for (const sample of samples) {
-  const paths = JSON.parse(fs.readFileSync(`${constants.JSON_DIR}/${sample.id}.json`));
+  const paths = JSON.parse(fs.readFileSync(`${constants.JSON_DIR}/${sample.id}.json`).toString());
 
   const functions = Features.inUse.map(feature => feature.function);
   sample.point = functions.map(func => func(paths));
