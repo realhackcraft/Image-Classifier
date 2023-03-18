@@ -28,10 +28,8 @@ fs.writeFileSync(constants.FEATURES, JSON.stringify({
   }),
 }));
 
-// language=JavaScript
 fs.writeFileSync(constants.FEATURES_JS, `const features = ${JSON.stringify({ featureNames, samples })};`);
 
 // fs.writeFileSync(constants.MINMAX_JS, `const minMax = ${JSON.stringify(minMax)};`);
-// language=JavaScript
 fs.writeFileSync(constants.MEAN_STDDEV, `const means = ${JSON.stringify(means)};
 const stdDevs = ${JSON.stringify(stdDevs)};`);
