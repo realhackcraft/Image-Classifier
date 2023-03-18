@@ -15,7 +15,8 @@ for (const sample of samples) {
   Utils.printProgress(sample.id, samples.length);
 }
 
-Utils.normalizePoints(samples.map(sample => sample.point));
+// const minMax = Utils.normalizePoints(samples.map(sample => sample.point));
+const { means, stdDevs } = Utils.standardizePoints(samples.map(sample => sample.point));
 
 const featureNames = Features.inUse.map(feature => feature.name);
 
@@ -27,4 +28,10 @@ fs.writeFileSync(constants.FEATURES, JSON.stringify({
   }),
 }));
 
+// language=JavaScript
 fs.writeFileSync(constants.FEATURES_JS, `const features = ${JSON.stringify({ featureNames, samples })};`);
+
+// fs.writeFileSync(constants.MINMAX_JS, `const minMax = ${JSON.stringify(minMax)};`);
+// language=JavaScript
+fs.writeFileSync(constants.MEAN_STDDEV, `const means = ${JSON.stringify(means)};
+const stdDevs = ${JSON.stringify(stdDevs)};`);

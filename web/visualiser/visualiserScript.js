@@ -34,6 +34,7 @@ function onDrawingUpdate(paths) {
   const functions = Features.inUse.map(feature => feature.function);
   const point = functions.map(func => func(paths));
 
+  Utils.standardizePoints([point], means, stdDevs);
   const { label, nearestSample } = classify(point);
   document.getElementById('predictedLabelContainer').innerHTML = `Is it a ${label}?`;
   chart.showDynamicPoint(point, label, nearestSample);

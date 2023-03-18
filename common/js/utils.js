@@ -79,16 +79,22 @@ class Utils {
     return indices.slice(0, k);
   }
 
-  static normalizePoints(points) {
-    const max = [...points[0]];
-    const min = [...points[0]];
+  static normalizePoints(points, minMax) {
+    let max, min;
     const dimensions = points[0].length;
 
-    for (const point of points) {
-      for (let i = 0; i < dimensions; i++) {
-        max[i] = Math.max(max[i], point[i]);
-        min[i] = Math.min(min[i], point[i]);
+    if (!minMax) {
+      min = [...points[0]];
+      max = [...points[0]];
+      for (const point of points) {
+        for (let i = 0; i < dimensions; i++) {
+          max[i] = Math.max(max[i], point[i]);
+          min[i] = Math.min(min[i], point[i]);
+        }
       }
+    } else {
+      min = minMax.min;
+      max = minMax.max;
     }
 
     for (const i in points) {
@@ -96,10 +102,62 @@ class Utils {
         points[i][j] = Utils.invLerp(min[j], max[j], points[i][j]);
       }
     }
+
+    return { min, max };
+  }
+
+  static standardizePoints(points, _means, _stdDevs) {
+    let means, stdDevs;
+
+    const dimensions = points[0].length;
+
+    if (_means && _stdDevs) {
+      means = _means;
+      stdDevs = _stdDevs;
+    } else {
+      means = [];
+      stdDevs = [];
+
+      for (let i = 0; i < dimensions; i++) {
+        const values = points.map(p => p[i]);
+        const mean = Utils.mean(values);
+        const std = Utils.stdDev(values);
+
+        means.push(mean);
+        stdDevs.push(std);
+      }
+
+    }
+
+    for (const i in points) {
+      for (let j = 0; j < dimensions; j++) {
+        points[i][j] = (points[i][j] - means[j]) / stdDevs[j];
+      }
+    }
+
+    return { means, stdDevs };
   }
 
   static invLerp(min, max, point) {
     return (point - min) / (max - min);
+  }
+
+  static mean(values) {
+    return values.reduce((a, b) => a + b) / values.length;
+  }
+
+  static stdDev(values) {
+    //   calculate standard deviation
+    const avg = Utils.mean(values);
+
+    const squareDiffs = values.map((value) => {
+      const diff = value - avg;
+      return diff * diff;
+    });
+
+    const avgSquareDiff = Utils.mean(squareDiffs);
+
+    return Math.sqrt(avgSquareDiff);
   }
 }
 
