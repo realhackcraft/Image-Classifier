@@ -15,6 +15,8 @@ for (const sample of samples) {
   Utils.printProgress(sample.id, samples.length);
 }
 
+Utils.normalizePoints(samples.map(sample => sample.point));
+
 const featureNames = Features.inUse.map(feature => feature.name);
 
 fs.writeFileSync(constants.FEATURES, JSON.stringify({

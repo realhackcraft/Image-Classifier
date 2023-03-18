@@ -63,20 +63,43 @@ class Utils {
     );
   }
 
-  static getNearest(loc, points) {
-    let minDist = Number.MAX_SAFE_INTEGER;
-    let nearestIndex = 0;
+  static getNearest(loc, points, k = 1) {
+    const object = points.map((point, index) => {
+      return {
+        point,
+        index,
+      };
+    });
 
-    for (let i = 0; i < points.length; i++) {
-      const point = points[i];
-      const d = this.distance(loc, point);
+    const sorted = object.sort((a, b) => {
+      return Utils.distance(loc, a.point) - Utils.distance(loc, b.point);
+    });
 
-      if (d < minDist) {
-        minDist = d;
-        nearestIndex = i;
+    const indices = sorted.map(obj => obj.index);
+    return indices.slice(0, k);
+  }
+
+  static normalizePoints(points) {
+    const max = [...points[0]];
+    const min = [...points[0]];
+    const dimensions = points[0].length;
+
+    for (const point of points) {
+      for (let i = 0; i < dimensions; i++) {
+        max[i] = Math.max(max[i], point[i]);
+        min[i] = Math.min(min[i], point[i]);
       }
     }
-    return nearestIndex;
+
+    for (const i in points) {
+      for (let j = 0; j < dimensions; j++) {
+        points[i][j] = Utils.invLerp(min[j], max[j], points[i][j]);
+      }
+    }
+  }
+
+  static invLerp(min, max, point) {
+    return (point - min) / (max - min);
   }
 }
 

@@ -41,7 +41,7 @@ function onDrawingUpdate(paths) {
 
 function classify(point) {
   const samplePoints = samples.map(sample => sample.point);
-  const index = Utils.getNearest(point, samplePoints);
-  const nearestSample = samples[index];
+  const indices = Utils.getNearest(point, samplePoints);
+  const nearestSample = samples[indices[0]];
   return { label: nearestSample.label, nearestSample };
 }
