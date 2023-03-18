@@ -6,7 +6,7 @@
     "canvas": "^2.11.0"
   },
   "scripts": {
-    "visualiser": "node node/visualiser/datasetGenerator.js",
+    "dataset-generator": "node node/features/datasetGenerator.js",
     "feature-extractor": "node node/features/feature_extractor.js"
   },
   "author": "Hackcraft_",

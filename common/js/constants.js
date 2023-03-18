@@ -1,8 +1,8 @@
 const constants = {};
 
-constants.RAW_DIR = '/Users/Hackcraft_/WebstormProjects/Image Classifier/node/visualiser/raw';
-constants.DATASET_DIR = '/Users/Hackcraft_/WebstormProjects/Image Classifier/node/visualiser/dataset';
 constants.COMMON = '/Users/Hackcraft_/WebstormProjects/Image Classifier/common';
+constants.RAW_DIR = constants.COMMON + '/raw';
+constants.DATASET_DIR = constants.COMMON + '/dataset';
 constants.JSON_DIR = constants.DATASET_DIR + '/json';
 constants.IMG_DIR = constants.DATASET_DIR + '/img';
 constants.SAMPLES = constants.DATASET_DIR + '/samples.json';
@@ -22,6 +22,6 @@ if (typeof module !== 'undefined' && module.exports) {
 
   module.exports = { constants, innitDirs };
 } else {
-  constants.DATASET_DIR = '../../node/visualiser/dataset';
+  constants.DATASET_DIR = '../../common/dataset';
   constants.IMG_DIR = constants.DATASET_DIR + '/img';
 }

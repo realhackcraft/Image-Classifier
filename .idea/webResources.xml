@@ -5,9 +5,9 @@
       <entry url="file://$PROJECT_DIR$">
         <entryData>
           <resourceRoots>
-            <path value="file://$PROJECT_DIR$/node/visualiser/dataset" />
-            <path value="file://$PROJECT_DIR$/node/visualiser/raw" />
             <path value="file://$PROJECT_DIR$/common/js-objects" />
+            <path value="file://$PROJECT_DIR$/common/dataset" />
+            <path value="file://$PROJECT_DIR$/common/raw" />
           </resourceRoots>
         </entryData>
       </entry>
