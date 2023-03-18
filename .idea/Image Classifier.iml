@@ -5,6 +5,9 @@
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/common/dataset" />
+      <excludeFolder url="file://$MODULE_DIR$/common/js-objects" />
+      <excludeFolder url="file://$MODULE_DIR$/common/raw" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
